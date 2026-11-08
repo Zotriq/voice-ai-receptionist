@@ -1,0 +1,30 @@
+[project]
+name = "voice-ai-receptionist"
+version = "0.1.0"
+description = "Voice AI receptionist for a dental clinic: Vapi phone agent + FastAPI tool server for availability, booking, cancellations and call logs"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Zohaib Tariq" }]
+dependencies = [
+  "fastapi>=0.110",
+  "uvicorn>=0.29",
+  "httpx>=0.27",
+  "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["receptionist"]
+
+[tool.setuptools.package-data]
+receptionist = ["clinic.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,26 @@
+{
+  "name": "Bright Smile Dental",
+  "timezone": "America/New_York",
+  "phone": "+1 (555) 010-2040",
+  "address": "214 Maple Avenue, Suite 3, Springfield",
+  "hours": {
+    "mon": ["09:00", "17:00"], "tue": ["09:00", "17:00"], "wed": ["09:00", "17:00"],
+    "thu": ["10:00", "19:00"], "fri": ["09:00", "15:00"], "sat": null, "sun": null
+  },
+  "lunch": ["13:00", "14:00"],
+  "slot_minutes": 30,
+  "services": {
+    "checkup": {"label": "Check-up and cleaning", "minutes": 60, "price": "$120, or covered by most insurance"},
+    "whitening": {"label": "Teeth whitening", "minutes": 90, "price": "$350"},
+    "filling": {"label": "Filling", "minutes": 60, "price": "from $150"},
+    "consultation": {"label": "New patient consultation", "minutes": 30, "price": "free"},
+    "emergency": {"label": "Emergency visit (pain, broken tooth)", "minutes": 30, "price": "$95 exam fee"}
+  },
+  "faq": {
+    "insurance": "We accept Delta Dental, Cigna, Aetna, MetLife and Guardian. We can check your coverage before the visit.",
+    "parking": "Free parking behind the building; the entrance is on Maple Avenue.",
+    "payment": "Card, cash, Apple Pay and CareCredit. Payment plans are available for treatments over $500.",
+    "cancellation": "Please cancel at least 24 hours ahead. Late cancellations may have a $40 fee.",
+    "new_patients": "New patients are welcome. Please arrive 10 minutes early to fill in a short form."
+  }
+}

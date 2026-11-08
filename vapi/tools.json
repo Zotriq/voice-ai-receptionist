@@ -1,0 +1,62 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "check_availability",
+      "description": "Find open appointment times for a service. Omit date to get the next available day.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "service": {"type": "string", "enum": ["checkup", "whitening", "filling", "consultation", "emergency"]},
+          "date": {"type": "string", "description": "YYYY-MM-DD"}
+        },
+        "required": ["service"]
+      }
+    },
+    "messages": [{"type": "request-start", "content": "Let me check the schedule."}]
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "book_appointment",
+      "description": "Book an appointment after the caller has chosen a time and given name and phone number.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "patient_name": {"type": "string"},
+          "phone": {"type": "string"},
+          "service": {"type": "string", "enum": ["checkup", "whitening", "filling", "consultation", "emergency"]},
+          "date": {"type": "string", "description": "YYYY-MM-DD"},
+          "time": {"type": "string", "description": "HH:MM, 24-hour clock"},
+          "notes": {"type": "string", "description": "Reason for visit or anything the dentist should know"}
+        },
+        "required": ["patient_name", "phone", "service", "date", "time"]
+      }
+    },
+    "messages": [{"type": "request-start", "content": "One moment while I book that."}]
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "find_appointment",
+      "description": "Look up upcoming appointments by the caller's phone number.",
+      "parameters": {"type": "object", "properties": {"phone": {"type": "string"}}, "required": ["phone"]}
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "cancel_appointment",
+      "description": "Cancel an appointment by its confirmation code. Confirm with the caller first.",
+      "parameters": {"type": "object", "properties": {"confirmation_code": {"type": "string"}}, "required": ["confirmation_code"]}
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_clinic_info",
+      "description": "Clinic facts. Topics: hours, address, prices, insurance, payment, cancellation, new_patients, parking.",
+      "parameters": {"type": "object", "properties": {"topic": {"type": "string"}}, "required": ["topic"]}
+    }
+  }
+]
